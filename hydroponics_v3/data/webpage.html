@@ -1,0 +1,144 @@
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+		.form-control {
+			display:inline-block;
+			width:3em;
+		}
+
+		.btn {
+			display:inline-block;
+		}
+
+		h5 {
+			display:inline-block;
+		}
+		
+		input {
+			text-align:left;
+		}
+		.fan_symbol {
+			position:relative;
+			top: 10px;  
+			left: 5px;
+		}
+		
+	</style>
+
+
+
+</head>
+
+<style>
+	
+</style>
+
+<body class = "bg-dark text-white">
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-md-4 ml-3">
+				<h1 class="display-3">WATER CONTROLS</h1>
+				<h5>Time: %CURRENT_TIME%</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card border-light p-3 bg-dark">	
+					<div class="row p-3">
+						<h1 class ="display-5">Lights</h1>
+						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="light_symbol" viewBox="0 0 16 16">
+							<path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
+						</svg>
+					</div>
+						<p>Light Status: %LIGHT_STATE%</p>
+						<p>Start Time: %LIGHT_START%</p>
+							
+							
+							
+						<form action="/light_start">
+							<input type="text" class="form-control" name="light_start">
+							<h5>:</h5>
+							<input type="text" class="form-control" name="light_start2">	
+							<button type="submit" class="btn btn-primary btn-md-4 active"> Enter </button>						
+						</form>
+							
+							
+						<p>Stop Time: %LIGHT_STOP%</p>
+						
+						<form action="/light_stop">
+							<input type="text" class="form-control" name="light_stop">
+							<h5>:</h5>
+							<input type="text" class="form-control" name="light_stop2">	
+							<button type="submit" class="btn btn-primary btn-md-4 active"> Enter </button>						
+						</form>
+							
+						<a href="/light_on" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">%LIGHT_BUTTON%</a>											
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card border-light bg-dark p-3">
+					<div class="row p-3">
+						<h1 class ="display-5">Watering Cycle</h1>
+						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="water_symbol" viewBox="0 0 16 16">
+						  <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0c.109.363.234.708.371 1.038.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8zm.413 1.021A31.25 31.25 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
+						  <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448z"/>
+						</svg>
+					</div>
+						<p>Watering Status: %WATER_STATE%</p>
+						<p>Time On: %WATER_START%</p>
+						<form action="/water_start">
+							<input type="text" class="form-control" name="water_start2">	
+							<button type="submit" class="btn btn-primary btn-md-4 active"> Enter </button>						
+						</form>
+						<p>Time Off: %WATER_STOP%</p>
+						<form action="/water_stop">
+							<input type="text" class="form-control" name="water_stop2">	
+							<button type="submit" class="btn btn-primary btn-md-4 active"> Enter </button>						
+						</form>
+						<a href="/water_on" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">%WATER_BUTTON%</a>					
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card border-light bg-dark p-3">
+					<div class="row p-3">
+						<h1 class ="display-5">Ph</h1>
+						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="ph_symbol" viewBox="0 0 16 16">
+						  <path fill-rule="evenodd" d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6zM6.646 4.646c-.376.377-1.272 1.489-2.093 3.13l.894.448c.78-1.559 1.616-2.58 1.907-2.87l-.708-.708z"/>
+						</svg>
+					</div>
+						<p>Ph Control: %PH_STATE%</p>
+						<p>Current Ph: %PH_CURRENT%</p>
+						<p>Desired Ph: %PH_DESIRED%</p>
+						<form action="/ph_new_value"">
+							<input type="text" class="form-control" name="ph_new_value">							
+							<button type="submit" class="btn btn-primary btn-md-4 active"> Enter </button>
+						</form>
+						<a href="ph_on" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">%PH_BUTTON%</a>					
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card border-light bg-dark p-3">
+					<div class="row p-3">
+						<h1 class ="display-5">Fans</h1>
+						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="fan_symbol" viewBox="0 0 16 16">
+						  <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5zm-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2zM0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5z"/>
+						</svg>
+					</div>
+						<p>Fan Status: %FAN_STATE%</p>
+						<a href="/fan_on" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">%FAN_BUTTON%</a>						
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
