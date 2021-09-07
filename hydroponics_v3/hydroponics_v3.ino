@@ -20,8 +20,9 @@
 #include "time.h"
 #include "Preferences.h"
 
-const char* ssid     = "Biscotto";
-const char* password = "4156029021";
+//Replace with your info for this to work
+const char* ssid     = "xxxxxxxxxx";
+const char* password = "xxxxxxxxxx";
 
 const char* ntpServer = "pool.ntp.org";
 const long  gmtOffset_sec = -25200;
